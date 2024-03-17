@@ -26,8 +26,9 @@ if dataset_name=="GDP":
     
     st.write("Kiểm tra độ tương quan giữa các cột bằng biểu đồ nhiệt")
     data = get_dataset()
+    data_del=data.drop(['Country ','Year'],axis=1)
     fig = plt.figure(figsize=(18,6))
-    sns.heatmap(data.corr(), annot=True, cmap='coolwarm', linewidth=1, linecolor='r')
+    sns.heatmap(data_del.corr(), annot=True, cmap='coolwarm', linewidth=1, linecolor='r')
     st.pyplot(fig)
     st.write('------------------------------------------------------------------------------------------')
     
@@ -436,8 +437,9 @@ else:
     st.header("Unemployment Prediction")
     st.write("Kiểm tra độ tương quan giữa các cột bằng biểu đồ nhiệt")
     data = get_dataset()
+    data_del1=data.drop(['Country ','Year'],axis=1)
     fig = plt.figure(figsize=(18,6))
-    sns.heatmap(data.corr(), annot=True, cmap='coolwarm', linewidth=1, linecolor='r')
+    sns.heatmap(data_del1.corr(), annot=True, cmap='coolwarm', linewidth=1, linecolor='r')
     st.pyplot(fig)
     st.write('------------------------------------------------------------------------------------------')
     att_regn = st.sidebar.selectbox('Region', options=(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25))
