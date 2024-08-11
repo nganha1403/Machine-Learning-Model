@@ -3,4 +3,5 @@ numpy
 pandas
 matplotlib
 scikit-learn
-matplotlib
+plotly
+seaborn
